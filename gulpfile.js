@@ -3,7 +3,7 @@ const htmlValidator = require(`gulp-html`);
 const htmlCompressor = require(`gulp-htmlmin`);
 
 let compressHTML = () => {
-    return src(`uncompressed-html/*.html`)
+    return src(`unprocessed-html/*.html`)
         .pipe(htmlCompressor({collapseWhitespace: true}))
         .pipe(dest(`processed-html/`));
 };
