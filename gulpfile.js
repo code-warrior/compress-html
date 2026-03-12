@@ -1,4 +1,4 @@
-const { src, dest } = require(`gulp`);
+const { src, dest, series } = require(`gulp`);
 const htmlValidator = require(`gulp-html`);
 const htmlCompressor = require(`gulp-htmlmin`);
 
@@ -15,3 +15,4 @@ let validateHTML = () => {
 
 exports.compressHTML = compressHTML;
 exports.validateHTML = validateHTML;
+exports.validateAndCompressHTML = series(validateHTML, compressHTML);
